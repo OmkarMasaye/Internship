@@ -1,13 +1,23 @@
-const express=require('express');
-const app=express();
-const port=2000;
+const express = require("express")
 
-app.use(express.json());
+const server = express();
+const port = 3000;
+// Middleware to parse JSON bodies
+server.use(express.json());
 
-app.get('/',(req,res)=>{
-    res.status(200).end('Hello World');
+server.get('/', (req, res) => {
+    res.send('My First Program');
 });
 
-app.listen(port,()=>{
-    console.log(`Server is running on http://localhost:${port}`);
+server.post('/user', (req, res) => {
+    const { name } = req.body;
+    // console.log(req.body)
+    res.json({ name });
 });
+
+
+
+server.listen(port, () => {
+    console.log(`Server is running on http:/localhost:${port}`);
+});
+
