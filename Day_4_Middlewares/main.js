@@ -6,7 +6,7 @@ const port = 3000;
 
 app.use(express.static("public"))
 
-app.use('/', router);
+app.use('/blog', router);
 
 
 app.get("/index", (req, res) => {
