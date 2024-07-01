@@ -22,7 +22,7 @@ const menuItemSchema= new mongoose.Schema({
         type:[String],
         default:[]
     },
-    nume_sales:{
+    num_sales:{
         type:Number,
         default:0
     }
